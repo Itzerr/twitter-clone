@@ -1,0 +1,271 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+$background-light: rgb(42, 134, 255);
+$background: rgb(0, 110, 255);
+$background-darker: rgb(0, 97, 224);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  border: #ccc solid 1px;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  padding: 16px;
+  display: flex;
+  gap: 1.5em;
+}
+
+.notice,
+.alert {
+  color: #fff;
+  padding: 16px;
+}
+
+.notice {
+  background-color: green;
+}
+
+.alert {
+  background-color: lightcoral;
+}
+
+header {
+  display: flex;
+  padding: 0px 16px;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: $background;
+  color: #fff;
+  border-bottom: $background-darker solid 3px;
+
+  padding: 8px 16px;
+
+  ul {
+    list-style-type: none;
+    li {
+      display: inline;
+    }
+    a {
+      padding: 12px;
+    }
+    a:hover {
+      background-color: $background-darker;
+    }
+  }
+
+  h1 {
+    a:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+main {
+  margin: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+figure.gravatar,
+figure.gravatar-small {
+  width: 64px;
+  height: 64px;
+  img {
+    height: inherit;
+    width: inherit;
+    border-radius: 50%;
+    background-color: gray;
+  }
+}
+
+figure.gravatar-small {
+  width: 32px;
+  height: 32px;
+}
+
+.main-page {
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+  width: 100%;
+}
+
+.tweets {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  min-width: 50%;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    width: 100%;
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3em;
+    }
+
+    input[type="submit"] {
+      background-color: $background-light;
+      color: white;
+    }
+  }
+}
+
+.tweet {
+  nav a {
+    color: $background-darker;
+  }
+}
+
+.trends {
+  display: flex;
+  flex-direction: column;
+  height: min-content;
+  padding: 0px;
+  gap: 0;
+  min-width: 20%;
+
+  h2 {
+    background-color: #eee;
+    font-size: 1.1em;
+  }
+  p {
+    border-top: 1px solid #aaa;
+  }
+  h2, p {
+    padding: 0.7em 2em 0.7em 0.4em;
+  }
+}
+
+.who-to-follow {
+  display: flex;
+  flex-direction: column;
+  height: min-content;
+  padding: 0px;
+  min-width: 20%;
+  gap: 0;
+
+  h2 {
+    background-color: #eee;
+    font-size: 1.1em;
+    padding: 0.7em 2em 0.7em 0.4em;
+  }
+
+  section {
+    display: flex;
+    border-top: 1px solid #aaa;
+    padding: 0.7em;
+    gap: 1em;
+    align-items: center;
+  }
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  height: min-content;
+  min-width: 20%;
+  gap: 0;
+  padding: 0;
+
+  h2 {
+    background-color: #eee;
+    font-size: 1.1em;
+    padding: 0.7em 2em 0.7em 0.4em;
+    border-bottom: 1px solid #aaa;
+  }
+
+  .user {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    padding: 0.7em;
+  }
+  
+  .stats {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    padding: 0.7em;
+    border-top: 1px solid #aaa;
+  }
+}
+
+.sign-up,
+.log-in,
+.edit-user,
+.tweet-form,
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  min-width: 30%;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7em;
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+      padding: 0.2em;
+      width: 100%;
+    }
+  }
+  .links {
+    a {
+      color: $background;
+    }
+  }
+}
+
+.button {
+  background-color: $background-light;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4em;
+  font-size: 1.1em;
+}
+.button:hover {
+  cursor: pointer;
+}

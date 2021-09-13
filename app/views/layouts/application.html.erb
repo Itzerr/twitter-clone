@@ -11,6 +11,32 @@
   </head>
 
   <body>
-    <%= yield %>
+    <% if flash[:notice] %>
+      <section class="flash notice">
+        <h2><%= notice %></h2>
+      </section>
+    <% end %>
+    <% if flash[:alert] %>
+      <section class="flash alert">
+        <h2><%= alert %></h2>
+      </section>
+    <% end %>
+    <header class="title">
+      <h1><%= link_to 'Twitter', root_path %></h1>
+      <nav>
+        <ul>
+          <% if user_signed_in? %>
+            <li><%= link_to current_user.name, edit_user_registration_path %></li>
+            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to 'Sign In', new_user_session_path %></li>
+            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>

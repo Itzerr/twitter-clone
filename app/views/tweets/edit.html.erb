@@ -1,0 +1,10 @@
+<article class="form">
+  <h1>Editing Tweet</h1>
+
+  <%= render 'form', tweet: @tweet %>
+
+  <section class="links">
+    <%= link_to 'Show', @tweet %> |
+    <%= link_to 'Back', tweets_path %>
+  </section>
+</article>

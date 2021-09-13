@@ -1,0 +1,26 @@
+<article class="card profile">
+  <h2>Profile</h2>
+  <section class="user">
+    <figure class="gravatar">
+      <%= gravatar_image_tag(current_user.email, alt: current_user.name) %>
+    </figure>
+    <section>
+      <strong><%= current_user.name %></strong><br>
+      <small><%= current_user.username %></small>
+    </section>
+  </section>
+  <section class="stats">
+    <section>
+      <small>tweets</small><br>
+      <strong><%= current_user.tweets.count %></strong>
+    </section>
+    <section>
+      <small>following</small><br>
+      <strong>123</strong>
+    </section>
+    <section>
+      <small>followers</small><br>
+      <strong>456k</strong>
+    </section>
+  </section>
+</article>

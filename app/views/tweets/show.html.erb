@@ -1,0 +1,13 @@
+<article class="tweet">
+  <p id="notice"><%= notice %></p>
+  <strong><%= @tweet.user.name %></strong><br>
+  <small>@<%= @tweet.user.username %></small>
+  <p><%= @tweet.body %></p>
+
+  <nav>
+    <% if @tweet.user == current_user %>
+      <%= link_to 'Edit', edit_tweet_path(@tweet) %> |
+    <% end %>
+    <%= link_to 'Back', tweets_path %>
+  </nav>
+</article>

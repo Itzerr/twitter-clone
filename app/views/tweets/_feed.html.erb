@@ -1,0 +1,32 @@
+<section class="tweets">
+  <% if user_signed_in? %>
+    <article class="card">
+      <figure class="gravatar">
+        <%= gravatar_image_tag(current_user.email, alt: current_user.name) %>
+      </figure>
+      <%= render 'form' %>
+    </article>
+  <% end %>
+
+  <% @tweets.each do | tweet | %>
+    <article class="card tweet">
+      <figure class="gravatar">
+        <%= gravatar_image_tag(tweet.user.email, alt: tweet.user.name) %>
+      </figure>
+      <section>
+        <strong><%= tweet.user.name %></strong><br>
+        <small><%= tweet.user.username %></small><br>
+        <p><%= tweet.body %></p>
+        <% if user_signed_in? %>
+        <nav>
+          <small><%= link_to 'Show', tweet %></small>
+          <% if current_user == tweet.user %>
+          <small><%= link_to 'Edit', edit_tweet_path(tweet) %></small>
+          <small><%= link_to 'Delete', tweet, method: :delete, data: { confirm: "Are you sure you want to delete this tweet?" } %></small>
+          <% end %>
+        </nav>
+        <% end %>
+      </section>
+    </article>
+  <% end %>
+</section>
